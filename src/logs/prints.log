@@ -1,4 +1,1 @@
-16:22:22.756 [main] INFO  Projects.validateRadioButtons - Driver is initialized
-16:22:25.311 [main] INFO  Projects.validateRadioButtons - Radio Button text is validated successfully
-16:22:25.403 [main] INFO  Projects.validateRadioButtons - Radio Button1 is clicked and validated successfully
-16:22:25.498 [main] INFO  Projects.validateRadioButtons - Radio Button2 is clicked and validated successfully
+00:06:14.801 [main] INFO  Projects.ValidateSuggestionClass - Driver is initialized for 'ValidateSuggestionClass' class

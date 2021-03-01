@@ -24,7 +24,7 @@ public class validateRadioButtons extends base {
 	@BeforeTest
 	public void startup() throws IOException {
 		driver = initializeDriver();
-		Log.info("Driver is initialized");
+		Log.info("Driver is initialized for 'validateRadioButtons' class");
 		
 
 	}
