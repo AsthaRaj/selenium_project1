@@ -1,1 +1,2 @@
-00:06:14.801 [main] INFO  Projects.ValidateSuggestionClass - Driver is initialized for 'ValidateSuggestionClass' class
+12:19:00.736 [main] INFO  Projects.validateCheckBox - Driver is initialized for 'validateRadioButtons' class
+12:19:03.451 [main] INFO  Projects.validateCheckBox - CheckBox text is validated successfully

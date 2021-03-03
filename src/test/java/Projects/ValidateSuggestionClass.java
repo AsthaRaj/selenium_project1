@@ -75,6 +75,7 @@ public class ValidateSuggestionClass extends base {
 	    	
 	    }
         //System.out.println(nameSelected);
+	  
 	    
 	    Assert.assertTrue(nameSelected.equalsIgnoreCase("India"));
 	    Log.info("India is selected successfully");

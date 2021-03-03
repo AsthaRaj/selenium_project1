@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -37,37 +38,36 @@ public class ValidateDropDownExample extends base {
 
 	public void checkDropDownText() throws IOException {
 
+		//driver = initializeDriver();
 		driver.get(prop.getProperty("url"));
 		PracticePage1 pg1 = new PracticePage1(driver);
 
-		String SuggestionClassText = pg1.getSuggestionClass().getText();
-		Assert.assertEquals("Suggession Class Example", SuggestionClassText);
-		Log.info("Suggession class example text is validated successfully");
+		String DropDownText = pg1.getDropDownExample().getText();
+		//Assert.assertEquals("Dropdown Example", DropDownText );
+		//Log.info("Drop Down example text is validated successfully");
+		System.out.println(DropDownText);
 
 	}
 
 	@Test
 
-	public void checkSuggestionClassTextBox() throws IOException {
-
+	public void checkDropDown() throws IOException, InterruptedException {
+		
+//		driver = initializeDriver();
 		driver.get(prop.getProperty("url"));
 		PracticePage1 pg1 = new PracticePage1(driver);
 
-		pg1.getSuggestionClassTextBox().sendKeys("Ind");
-		List<WebElement> options=driver.findElements(By.xpath("//ul[@id='ui-id-1']/li"));
-	    int optionSize= driver.findElements(By.xpath("//ul[@id='ui-id-1']/li")).size();
-	    System.out.println(optionSize);
-	    for(int i=0;i<optionSize;i++)
-	    {
-	    	String name=(options.get(i).getText());
-	    	if(name.equalsIgnoreCase("India"))
-	    	{
-	    		options.get(i).click();
-	    	
-	    		break;
-	    	}
-	    	
-	    }
+		//pg1.getSelectDropDown().click();
+	    Select s=new Select(pg1.getSelectDropDown());
+	    //Thread.sleep(3000L);
+	    s.selectByVisibleText("Option2");
+	   //System.out.println(pg1.getSelectDropDown().getTagName());
+	    WebElement option=s.getFirstSelectedOption();
+	    String selectedName=option.getText();
+	    //System.out.println(selectedName);
+	    
+	    Assert.assertTrue(selectedName.equalsIgnoreCase("Option2"));
+	   
 
 	}
 	
