@@ -22,6 +22,8 @@ public class PracticePage3 {
 	private By WebTableFixHeaderHeadings = By.xpath("//div[@class='tableFixHead']/table/thead/tr/th");
 	private By WebTableFixedHeaderRowCount = By.xpath("//div[@class='tableFixHead']/table/tbody/tr");
 	private By WebTableFixedHeaderColCount = By.xpath("//div[@class='tableFixHead']/table/tbody/tr[2]/td");
+	private By WebTableFixedHeaderAmountCol = By.xpath("//div[@class='tableFixHead']//td[position()=4]");
+	private By WebTableFixedHeaderTotalAmount = By.cssSelector("div.totalAmount");
 
 	public PracticePage3(WebDriver driver) {
 		this.driver = driver;
@@ -84,6 +86,17 @@ public class PracticePage3 {
 
 	public int getWebTableFixedHeaderColCount() {
 		return driver.findElements(WebTableFixedHeaderColCount).size();
+
+	}
+
+	public List<WebElement> getWebTableFixedHeaderAmountCol() {
+		return driver.findElements(WebTableFixedHeaderAmountCol);
+
+	}
+	
+	public WebElement getWebTableFixedHeaderTotalAmount() {
+		return driver.findElement(WebTableFixedHeaderTotalAmount);
+		
 
 	}
 }

@@ -6,7 +6,7 @@
       <class name="Projects.validateWebTableFixedHeader">
         <methods>
           <include name="startup"/>
-          <include name="checkWebTableFixedHeaderColCount"/>
+          <include name="checkWebTableFixedHeaderAmountCol"/>
         </methods>
       </class> <!-- Projects.validateWebTableFixedHeader -->
     </classes>
