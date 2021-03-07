@@ -18,42 +18,47 @@ import pageObjects.PracticePage1;
 public class validateCheckBox extends base {
 
 	public WebDriver driver;
-	
-	private static Logger Log=LogManager.getLogger(validateCheckBox.class.getName());
+
+	private static Logger Log = LogManager.getLogger(validateCheckBox.class.getName());
 
 	@BeforeTest
 	public void startup() throws IOException {
 		driver = initializeDriver();
 		Log.info("Driver is initialized for 'validateRadioButtons' class");
-		
 
 	}
 
-	
-@Test
+	@Test
 
-	public void checkRadioButtonText() throws IOException {
+	// Validates checkBox title
+	public void checkCheckBoxText() throws IOException {
 
 		driver.get(prop.getProperty("url"));
 		PracticePage1 pg1 = new PracticePage1(driver);
 
 		String CheckBoxText = pg1.getCheckBoxExample().getText();
-		Assert.assertEquals("Checkbox Example",CheckBoxText );
+		Assert.assertEquals("Checkbox Example", CheckBoxText);
 		Log.info("CheckBox text is validated successfully");
 
 	}
-  @Test
+
+	@Test
+
+	// Validates if checkbox is getting selected correctly
 	public void validateCheckBox() {
-	  
-	  PracticePage1 pg1 = new PracticePage1(driver);
+
+		PracticePage1 pg1 = new PracticePage1(driver);
 		pg1.getCheckBoxOption2().click();
 		pg1.getCheckBoxOption3().click();
-		
+
 		Assert.assertTrue((pg1.getCheckBoxOption2().isSelected()) && (pg1.getCheckBoxOption3().isSelected()));
-		
-		
+
 	}
 
-	
+	@AfterTest
+	// Closing browsers
+	public void tearDown() {
+		driver.close();
+	}
 
 }

@@ -12,63 +12,65 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import Resources.base;
 import pageObjects.PracticePage1;
-
+import pageObjects.PracticePage2;
 
 public class ValidateDropDownExample extends base {
 
-
 	public WebDriver driver;
-	
-	private static Logger Log=LogManager.getLogger(ValidateDropDownExample.class.getName());	
-	
+	public PracticePage1 pg1;
+
+	private static Logger Log = LogManager.getLogger(ValidateDropDownExample.class.getName());
+
 	@BeforeTest
 	public void startup() throws IOException {
 		driver = initializeDriver();
+		driver.get(prop.getProperty("url"));
+		pg1 = new PracticePage1(driver);
 		Log.info("Driver is initialized for 'ValidateSuggestionClass' class");
-		
-	}
-	
-	
-	@Test
 
+	}
+
+	@Test
+	// Validates DropDown Title
 	public void checkDropDownText() throws IOException {
 
-		//driver = initializeDriver();
 		driver.get(prop.getProperty("url"));
-		PracticePage1 pg1 = new PracticePage1(driver);
+		pg1 = new PracticePage1(driver);
 
 		String DropDownText = pg1.getDropDownExample().getText();
-		//Assert.assertEquals("Dropdown Example", DropDownText );
-		//Log.info("Drop Down example text is validated successfully");
+
 		System.out.println(DropDownText);
 
 	}
 
 	@Test
-
+	// Validates if dropdowns are getting sellected correctly
 	public void checkDropDown() throws IOException, InterruptedException {
-		
-//		driver = initializeDriver();
+
 		driver.get(prop.getProperty("url"));
-		PracticePage1 pg1 = new PracticePage1(driver);
+		pg1 = new PracticePage1(driver);
 
-		//pg1.getSelectDropDown().click();
-	    Select s=new Select(pg1.getSelectDropDown());
-	    //Thread.sleep(3000L);
-	    s.selectByVisibleText("Option2");
-	   //System.out.println(pg1.getSelectDropDown().getTagName());
-	    WebElement option=s.getFirstSelectedOption();
-	    String selectedName=option.getText();
-	    //System.out.println(selectedName);
-	    
-	    Assert.assertTrue(selectedName.equalsIgnoreCase("Option2"));
-	   
+		Select s = new Select(pg1.getSelectDropDown());
+
+		s.selectByVisibleText("Option2");
+
+		WebElement option = s.getFirstSelectedOption();
+		String selectedName = option.getText();
+
+		Assert.assertTrue(selectedName.equalsIgnoreCase("Option2"));
 
 	}
-	
+
+	@AfterTest
+	// Closing browsers
+	public void tearDown() {
+		driver.close();
 	}
+
+}

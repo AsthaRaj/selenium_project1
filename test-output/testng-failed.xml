@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Projects.validateCheckBox">
+      <class name="Projects.validateWebTableFixedHeader">
         <methods>
-          <include name="validateCheckBox"/>
           <include name="startup"/>
+          <include name="checkWebTableFixedHeaderColCount"/>
         </methods>
-      </class> <!-- Projects.validateCheckBox -->
+      </class> <!-- Projects.validateWebTableFixedHeader -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

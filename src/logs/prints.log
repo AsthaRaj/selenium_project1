@@ -1,2 +1,2 @@
-12:19:00.736 [main] INFO  Projects.validateCheckBox - Driver is initialized for 'validateRadioButtons' class
-12:19:03.451 [main] INFO  Projects.validateCheckBox - CheckBox text is validated successfully
+00:19:24.077 [main] INFO  Projects.validateWebTableFixedHeader - Driver is initialized for 'validateRadioButtons' class
+00:19:24.350 [main] INFO  Projects.validateWebTableFixedHeader - WebTable Fixed Header text is validated successfully

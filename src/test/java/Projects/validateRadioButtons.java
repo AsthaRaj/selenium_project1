@@ -18,20 +18,18 @@ import pageObjects.PracticePage1;
 public class validateRadioButtons extends base {
 
 	public WebDriver driver;
-	
-	private static Logger Log=LogManager.getLogger(validateRadioButtons.class.getName());
+
+	private static Logger Log = LogManager.getLogger(validateRadioButtons.class.getName());
 
 	@BeforeTest
 	public void startup() throws IOException {
 		driver = initializeDriver();
 		Log.info("Driver is initialized for 'validateRadioButtons' class");
-		
 
 	}
 
-	//PracticePage1 pg1 = new PracticePage1(driver);
+	// PracticePage1 pg1 = new PracticePage1(driver);
 
-	
 	@Test
 
 	public void checkRadioButtonText() throws IOException {
@@ -44,37 +42,41 @@ public class validateRadioButtons extends base {
 		Log.info("Radio Button text is validated successfully");
 
 	}
-  @Test
+
+	@Test
 	public void validateRadio1() {
-	  
-	  PracticePage1 pg1 = new PracticePage1(driver);
+
+		PracticePage1 pg1 = new PracticePage1(driver);
 		pg1.getRadio1().click();
 		Assert.assertTrue(pg1.getRadio1().isSelected());
 		Log.info("Radio Button1 is clicked and validated successfully");
 
 	}
+
 	@Test
 	public void validateRadio2() {
-        
+
 		PracticePage1 pg1 = new PracticePage1(driver);
 		pg1.getRadio2().click();
 		Assert.assertTrue(pg1.getRadio2().isSelected());
 		Log.info("Radio Button2 is clicked and validated successfully");
 
-		
-		
-
 	}
+
 	@Test
 	public void validateRadio3() {
-        
+
 		PracticePage1 pg1 = new PracticePage1(driver);
 		pg1.getRadio3().click();
 		Assert.assertTrue(pg1.getRadio2().isSelected());
 		Log.info("Radio Button3 is clicked and validated successfully");
 
 	}
-	
-	
+
+	@AfterTest
+	// Closing browsers
+	public void tearDown() {
+		driver.close();
+	}
 
 }
