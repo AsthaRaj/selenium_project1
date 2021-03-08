@@ -1,2 +1,2 @@
-01:25:28.836 [main] INFO  Projects.validateWebTableFixedHeader - Driver is initialized for 'validateRadioButtons' class
-01:25:29.632 [main] INFO  Projects.validateWebTableFixedHeader - WebTable Fixed Header text is validated successfully
+00:48:31.951 [main] INFO  Projects.ValidateDropDownExample - Driver is initialized for 'ValidateSuggestionClass' class
+00:48:33.526 [main] INFO  Projects.ValidateDropDownExample - Mouse Hover text is validated successfully
