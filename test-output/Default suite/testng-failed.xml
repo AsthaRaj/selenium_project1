@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Projects.ValidateMouseHover">
+      <class name="Projects.validateFrame">
         <methods>
+          <include name="checkFrames"/>
           <include name="startup"/>
-          <include name="checkMouseHoverButton"/>
         </methods>
-      </class> <!-- Projects.ValidateMouseHover -->
+      </class> <!-- Projects.validateFrame -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
