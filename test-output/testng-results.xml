@@ -1,29 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-10T13:15:28 IST" name="Default suite" finished-at="2021-03-10T13:16:00 IST" duration-ms="32307">
+  <suite started-at="2021-03-16T17:02:33 IST" name="Default suite" finished-at="2021-03-16T17:03:38 IST" duration-ms="64810">
     <groups>
     </groups>
-    <test started-at="2021-03-10T13:15:28 IST" name="Default test" finished-at="2021-03-10T13:16:00 IST" duration-ms="32307">
-      <class name="Projects.validateFrame">
-        <test-method is-config="true" signature="startup()[pri:0, instance:Projects.validateFrame@6187d1f5]" started-at="2021-03-10T13:15:28 IST" name="startup" finished-at="2021-03-10T13:15:35 IST" duration-ms="7594" status="PASS">
+    <test started-at="2021-03-16T17:02:33 IST" name="Default test" finished-at="2021-03-16T17:03:38 IST" duration-ms="64810">
+      <class name="Projects.validateLinks">
+        <test-method is-config="true" signature="startup()[pri:0, instance:Projects.validateLinks@a22cb6a]" started-at="2021-03-16T17:02:33 IST" name="startup" finished-at="2021-03-16T17:02:42 IST" duration-ms="8635" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startup -->
-        <test-method signature="checkFrameText()[pri:0, instance:Projects.validateFrame@6187d1f5]" started-at="2021-03-10T13:15:35 IST" name="checkFrameText" finished-at="2021-03-10T13:15:36 IST" duration-ms="180" status="PASS">
+        <test-method signature="checkLinksCount()[pri:0, instance:Projects.validateLinks@a22cb6a]" started-at="2021-03-16T17:02:42 IST" name="checkLinksCount" finished-at="2021-03-16T17:02:42 IST" duration-ms="283" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkFrameText -->
-        <test-method signature="checkFrames()[pri:0, instance:Projects.validateFrame@6187d1f5]" started-at="2021-03-10T13:15:36 IST" name="checkFrames" finished-at="2021-03-10T13:16:00 IST" duration-ms="24316" status="PASS">
+        </test-method> <!-- checkLinksCount -->
+        <test-method signature="validateColumn1Links()[pri:0, instance:Projects.validateLinks@a22cb6a]" started-at="2021-03-16T17:02:42 IST" name="validateColumn1Links" finished-at="2021-03-16T17:03:33 IST" duration-ms="50843" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkFrames -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Projects.validateFrame@6187d1f5]" started-at="2021-03-10T13:16:00 IST" name="tearDown" finished-at="2021-03-10T13:16:00 IST" duration-ms="160" status="PASS">
+        </test-method> <!-- validateColumn1Links -->
+        <test-method signature="validateFooterLinksAttribute()[pri:0, instance:Projects.validateLinks@a22cb6a]" started-at="2021-03-16T17:03:33 IST" name="validateFooterLinksAttribute" finished-at="2021-03-16T17:03:38 IST" duration-ms="4869" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+the link Broken Linkis broken with response code=404 expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+the link Broken Linkis broken with response code=404 expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at Projects.validateLinks.validateFooterLinksAttribute(validateLinks.java:80)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateFooterLinksAttribute -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Projects.validateLinks@a22cb6a]" started-at="2021-03-16T17:03:38 IST" name="tearDown" finished-at="2021-03-16T17:03:38 IST" duration-ms="104" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Projects.validateFrame -->
+      </class> <!-- Projects.validateLinks -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

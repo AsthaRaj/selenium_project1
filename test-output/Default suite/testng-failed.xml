@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Projects.validateFrame">
+      <class name="Projects.validateLinks">
         <methods>
-          <include name="checkFrames"/>
           <include name="startup"/>
+          <include name="tearDown"/>
+          <include name="validateFooterLinksAttribute"/>
         </methods>
-      </class> <!-- Projects.validateFrame -->
+      </class> <!-- Projects.validateLinks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
